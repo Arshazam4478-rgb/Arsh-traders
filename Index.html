@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arsh Traders | Jute Bags & Industrial Scrap Dealer</title>
+    <style>
+        :root { --primary: #2c3e50; --accent: #27ae60; --bg: #f8f9fa; --dark: #333; --light: #fff; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: sans-serif; scroll-behavior: smooth; }
+        body { color: var(--dark); background: var(--bg); line-height: 1.6; }
+        header { background: var(--light); box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: fixed; width: 100%; top: 0; z-index: 1000; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 22px; font-weight: bold; color: var(--primary); }
+        .logo span { color: var(--accent); }
+        .gst { font-size: 11px; background: #eef2f5; padding: 4px; border-radius: 4px; color: #7f8c8d; }
+        nav a { text-decoration: none; color: var(--primary); margin-left: 15px; font-weight: bold; }
+        .hero { background: linear-gradient(rgba(44,62,80,0.9), rgba(44,62,80,0.9)), url('https://unsplash.com') no-repeat center/cover; height: 50vh; display: flex; align-items: center; justify-content: center; text-align: center; color: var(--light); margin-top: 60px; padding: 20px; }
+        .badge { background: rgba(39,174,96,0.2); border: 1px solid var(--accent); padding: 5px 15px; border-radius: 20px; display: inline-block; margin-bottom: 10px; font-size: 13px; }
+        section { padding: 40px 20px; max-width: 1200px; margin: 0 auto; }
+        .title { text-align: center; font-size: 28px; margin-bottom: 30px; color: var(--primary); }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        @media(max-width:768px){ .grid { grid-template-columns: 1fr; } }
+        .card { background: white; border-radius: 6px; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); border-top: 4px solid var(--primary); }
+        .card.eco { border-top-color: var(--accent); }
+        .item { padding: 10px 0; border-bottom: 1px solid #ddd; display: flex; justify-content: space-between; font-weight: bold; }
+        .price { color: var(--accent); }
+        .contact { background: #fff; border-radius: 6px; padding: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 5px; font-weight: bold; }
+        .form-group input, .form-group textarea { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px; }
+        .btn { background: var(--accent); color: white; border: none; padding: 12px; font-size: 16px; font-weight: bold; border-radius: 4px; cursor: pointer; width: 100%; }
+        footer { background: var(--primary); color: #bdc3c7; text-align: center; padding: 15px; font-size: 13px; margin-top: 30px; }
+    </style>
+    <script>
+        function sendToWhatsApp(event) {
+            event.preventDefault();
+            var name = document.getElementById('name').value;
+            var phone = document.getElementById('phone').value;
+            var req = document.getElementById('req').value;
+            var msg = "Arsh Traders Enquiry:%0AName: " + encodeURIComponent(name) + "%0APhone: " + encodeURIComponent(phone) + "%0ARequirement: " + encodeURIComponent(req);
+            window.open("https://wa.me" + msg, "_blank");
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="logo">Arsh <span>Traders</span> <span class="gst">GST: 09ANLPA2014NZZ1</span></div>
+        <nav><a href="#products">Rates</a><a href="#contact">Contact</a></nav>
+    </header>
+    <div class="hero">
+        <div>
+            <div class="badge">Proprietor: Mukhtar Ahmad</div>
+            <h2>Jute Bags & Industrial Scrap Dealer</h2>
+            <p>Hum Premium Quality Jute Bags aur Scrap Materials Bulk me supply karte hain.</p>
+        </div>
+    </div>
+    <section id="products">
+        <h3 class="title">Products & Rates</h3>
+        <div class="grid">
+            <div class="card">
+                <h4>Industrial Scrap Materials</h4>
+                <div class="item"><span>Iron (Loha) Scrap</span><span class="price">Rait: ₹25 - ₹35 / Kg</span></div>
+                <div class="item"><span>Plastic Scrap</span><span class="price">Rait: ₹15 - ₹25 / Kg</span></div>
+                <div class="item"><span>Paper / Gatta</span><span class="price">Rait: ₹12 - ₹15 / Kg</span></div>
+            </div>
+            <div class="card eco">
+                <h4>Premium Jute Bags</h4>
+                <div class="item"><span>Hessian Bags (Boriyan)</span><span class="price">Bulk Supply</span></div>
+                <div class="item"><span>Sacking Bags (Heavy Duty)</span><span class="price">Available</span></div>
+                <div class="item"><span>Logo & Name Printing</span><span class="price">Customized</span></div>
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="contact">
+        <h3 class="title">Sampark Karein</h3>
+        <div class="grid">
+            <div>
+                <h5>Address:</h5>
+                <p>Shahmau, Tehsil Tiloi, Near Sanno Devi School, UP - 229304</p>
+                <h5 style="margin-top:15px;">Mobile:</h5>
+                <p>9415745551, 9554745551</p>
+                <h5 style="margin-top:15px;">Email:</h5>
+                <p>Arshazam4478@gmail.com</p>
+            </div>
+            <div>
+                <form onsubmit="sendToWhatsApp(event)">
+                    <div class="form-group"><label>Aapka Naam</label><input type="text" id="name" required placeholder="e.g. Ramesh Kumar"></div>
+                    <div class="form-group"><label>Mobile Number</label><input type="tel" id="phone" required placeholder="e.g. 98765xxxxx"></div>
+                    <div class="form-group"><label>Kya maal chahiye aur kitna?</label><textarea id="req" rows="3" required placeholder="Jaise: 5 Ton Loha scrap chahiye..."></textarea></div>
+                    <button type="submit" class="btn">WhatsApp Par Enquiry Bhejein</button> 
+                </form>
+            </div>
+        </div>
+    </section>
+    <footer><p>&copy; 2026 Arsh Traders. All Rights Reserved.</p></footer>
